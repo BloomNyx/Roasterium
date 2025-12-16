@@ -1,0 +1,66 @@
+/* ===============================
+   Atmosphere Split
+   =============================== */
+
+.atmosphere {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  background: #111;
+}
+
+.atmosphere__panel {
+  position: relative;
+  width: 50%;
+  overflow: hidden;
+}
+
+.atmosphere__panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.atmosphere__panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  display: none;
+}
+
+.atmosphere__word {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  font-family: var(--subEng-font);
+  font-size: 2.4rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+
+@media (max-width: 900px) {
+  .atmosphere {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .atmosphere__panel {
+    width: 100%;
+    height: 60vh;
+  }
+
+  .atmosphere__word {
+    font-size: 1.6rem;
+    bottom: 48px;
+  }
+}

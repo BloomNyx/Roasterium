@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -10,6 +10,78 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+    <header class="header">
+      <div class="header__inner wrapper">
+    <!-- Logo -->
+        <h1 class="logo">
+          <a href="#">
+            <span class="logo__eng">Maison de Velours</span>
+            <span class="logo__sub">Maid & Butler Café</span>
+          </a>
+        </h1>
+
+    <!-- Navigation -->
+    <nav class="gnb">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Concept</a></li>
+        <li><a href="#">Staff</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Reservation</a></li>
+      </ul>
+    </nav>
+
+  </div>
+    </header>
+    <main id="main">
+
+      <!-- intro -->
+      <section class="intro">
+        <div class="intro__media">
+          <div class="intro__inner">
+          <img class="intro__slide intro__slide--blank" src="assets/img/intro.jpg" alt=""/>
+          <img class="intro__slide" src="assets/img/intro1.jpg" alt="메인이미지"/>
+          <img class="intro__slide" src="assets/img/intro2.jpg" alt="이미지">
+          <img class="intro__slide" src="assets/img/intro3.jpg" alt="이미지">
+          <img class="intro__slide" src="assets/img/intro4.jpg" alt="이미지">
+          </div>
+        </div>
+        <div class="intro__overlay"></div>
+
+        <div class="intro__content">
+          <p class="intro__eyebrow">Bienvenue à la Maison</p>
+          <h2 class="intro__title">Maison de Velours</h2>
+          <p class="intro__desc">
+            유서 깊은 유럽 저택에서 시작되는<br />
+            메이드와 집사의 정중한 환대
+          </p>
+        </div>
+      </section>
+
+      <!-- consept -->
+      <section class="atmosphere">
+        <div class="atmosphere__panel atmosphere__panel--left">
+          <img src="assets/img/atmo1.jpg" alt="">
+          <span class="atmosphere__word">Quiet</span>
+        </div>
+
+        <div class="atmosphere__panel atmosphere__panel--right">
+          <img src="assets/img/atmo2.jpg" alt="">
+          <span class="atmosphere__word">Courtesy</span>
+        </div>
+      </section>
+
+
+    </main>
+
+      <footer id="footer"></footer>
+
+    <div class="side_nav">
+        <span class="current">01</span>
+        <div class="line"><span></span></div>
+        <span class="total">06</span>
+    </div>
+
     <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>

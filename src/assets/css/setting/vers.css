@@ -1,0 +1,68 @@
+/* ===============================
+   European Antique Version Style
+   =============================== */
+
+:root {
+    /* =========================
+       Font Variables
+       ========================= */
+    --mainEng-font: "Playfair Display";
+    --subEng-font: "Cormorant Garamond";
+    --logo-font: "Cinzel";
+    --mainKor-font: "Noto Serif KR";
+
+    /* =========================
+       Color Variables
+       ========================= */
+    --mainBg-color: #F5F1EA;   /* 아이보리 */
+    --subBg100: #E8E1D6;       /* 연한 석고 */
+    --subBg200: #CDC0B1;       /* 베이지 */
+    --subBg300: #5A4634;       /* 우드 브라운 */
+    --subBg400: #2B2A28;       /* 다크 브라운 */
+    --subBg500: #7A1E2C;       /* 와인 레드 */
+
+    --gold: #B89B5E;           /* 앤틱 골드 */
+
+    --white: #ffffff;
+    --black: #000000;
+    --black100: #2B2A28;
+    --black200: #434343;
+    --black300: #686868;
+    --black400: #E0E0E0;
+
+    /* =========================
+       Base Typography
+       ========================= */
+    font-family: var(--mainKor-font), var(--mainEng-font), serif;
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
+
+    /* =========================
+       Font Rendering
+       ========================= */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    -webkit-text-size-adjust: 100%;
+}
+
+/* ===============================
+   Responsive Root
+   =============================== */
+@media (max-width: 800px) {
+    :root {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* ===============================
+   Body
+   =============================== */
+body {
+    color: var(--black100);
+    background-color: var(--mainBg-color);
+}
