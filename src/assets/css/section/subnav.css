@@ -1,43 +1,73 @@
-/* ----------------------------------------------------
-    SIDE NAV — 위치(.side__nav) + 디자인(.sideNav)
----------------------------------------------------- */
-.side_nav {
-    /* 위치 (기존 .side__nav에서 가져오기) */
-    display: -moz-flex;
-    display: flex;
-    position: fixed;
-    z-index: 10;
-    width: 23px;
-    height: 190px;
-    top: 50%;
-    right: 74px;
-    margin-top: -95px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+/* ===============================
+   Section
+   =============================== */
+
+.section {
+  min-height: 100vh;
+  padding: 120px 80px;
+  box-sizing: border-box;
 }
-/* 숫자 (01, 06) */
+
+.section[data-nav="dark"] {
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.section[data-nav="light"] {
+  background: #ffffff;
+  color: #111;
+}
+
+/* ===============================
+   SIDE NAV
+   =============================== */
+
+.side_nav {
+  position: fixed;
+  top: 50%;
+  right: 74px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #000;
+  z-index: 100;
+  transition: color 0.3s ease;
+}
+
 .side_nav .current,
 .side_nav .total {
-    font-size: 14px;
+  font-size: 14px;
 }
-/* 라인 (배경 + progress) */
+
 .side_nav .line {
-    width: 2px;
-    height: 120px;
-    background: #d9d9d9;
-    margin: 10px 0;
-    position: relative;
-    overflow: hidden;
+  width: 2px;
+  height: 120px;
+  background: rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
 }
-/* 채워지는 애니메이션 영역 */
+
 .side_nav .line span {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 5%;
-    background: #000;
-    transition: height 0.3s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: currentColor;
+  transition: height 0.3s ease;
+}
+
+/* 다크 모드 */
+.side_nav.is-dark {
+  color: #fff;
+}
+
+.side_nav.is-dark .line {
+  background: rgba(255,255,255,0.3);
 }

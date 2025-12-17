@@ -1,0 +1,63 @@
+/* ===============================
+   FOOTER — Ledger + Fade
+   =============================== */
+
+.footer {
+  position: relative;
+  padding: 200px 80px 160px;
+  background: #050505;
+  color: rgba(255,255,255,0.65);
+  overflow: hidden;
+}
+
+.footer__ledger {
+  max-width: 1000px;
+  margin: 0 auto 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+
+.footer__col h4 {
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+
+.footer__col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__col li {
+  font-size: 0.85rem;
+  line-height: 2;
+  opacity: 0.5;
+}
+
+.footer__closing {
+  text-align: center;
+  font-family: var(--logo-font);
+  font-size: 1.3rem;
+  letter-spacing: 0.25em;
+  margin-bottom: 48px;
+  opacity: 0.8;
+}
+
+.footer__brand {
+  display: block;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.45em;
+  opacity: 0.35;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .footer__ledger {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+}

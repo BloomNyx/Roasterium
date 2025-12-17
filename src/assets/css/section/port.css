@@ -1,0 +1,111 @@
+/* ===============================
+   Horizontal Menu
+   =============================== */
+
+.menu-horizontal {
+  position: relative;
+  background: #070707;
+  color: rgba(255,255,255,0.85);
+  padding: 200px 0 120px;
+  overflow: hidden;
+}
+
+/* Header */
+.menu-h__header {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.menu-h__eyebrow {
+  font-family: var(--subEng-font);
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+
+.menu-h__title {
+  font-family: var(--logo-font);
+  font-size: 3rem;
+  letter-spacing: 0.45em;
+}
+
+/* Wrapper */
+.menu-h__wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Track */
+.menu-h__track {
+  display: flex;
+  height: 100%;
+  gap: 120px;
+  padding: 0 15vw;
+}
+
+/* Item */
+.menu-h__item {
+  position: relative;
+  flex: 0 0 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-h__item img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  filter: brightness(0.85);
+  margin-bottom: 40px;
+}
+
+/* Roman numeral */
+.menu-h__index {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  font-family: var(--logo-font);
+  font-size: 4rem;
+  letter-spacing: 0.3em;
+  opacity: 0.15;
+}
+
+/* Text */
+.menu-h__category {
+  font-family: var(--subEng-font);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  opacity: 0.6;
+}
+
+.menu-h__name {
+  font-family: var(--subEng-font);
+  font-size: 1.4rem;
+  letter-spacing: 0.3em;
+  margin: 14px 0;
+}
+
+.menu-h__desc {
+  font-family: var(--mainKor-font);
+  font-size: 0.95rem;
+  opacity: 0.7;
+  max-width: 420px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .menu-h__track {
+    gap: 80px;
+  }
+
+  .menu-h__item {
+    flex: 0 0 85vw;
+  }
+
+  .menu-h__title {
+    font-size: 2rem;
+  }
+}

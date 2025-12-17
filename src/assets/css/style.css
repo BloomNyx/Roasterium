@@ -6,6 +6,7 @@
 @import url(setting/reset.css);
 
 /* section */
+@import url(section/loading.css);
 @import url(section/header.css);
 @import url(section/intro.css);
 @import url(section/site.css);
@@ -14,3 +15,4 @@
 @import url(section/contact.css);
 @import url(section/footer.css);
 @import url(section/subnav.css);
+@import url(section/white.css);

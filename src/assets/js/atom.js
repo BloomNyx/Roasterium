@@ -3,53 +3,151 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ===============================
-   Atmosphere Tone & Split Motion
-=============================== */
-
 export function atom() {
+
   const panels = document.querySelectorAll(".atmosphere__panel");
-  const images = document.querySelectorAll(".atmosphere__panel img");
-  const words = document.querySelectorAll(".atmosphere__word");
+  if (!panels.length) return;
 
-  // 초기 상태 (intro 톤과 연결)
-  gsap.set(images, {
-    scale: 1.08,
-    filter: "brightness(0.75) contrast(1.05)"
-  });
+  const section = document.querySelector(".atmosphere");
 
-  gsap.set(words, {
+  /* ==================================================
+     🔵 LEFT PANEL
+  ================================================== */
+  const leftPanel = panels[0];
+  if (leftPanel) {
+
+    const wrap = leftPanel.querySelector(".slice-wrap");
+    const slices = leftPanel.querySelectorAll(".slice");
+    const word = leftPanel.querySelector(".atmosphere__word");
+    if (!wrap || !slices.length) return;
+
+    const imgSrc = wrap.dataset.img;
+    const BASE = window.innerWidth * 0.8;
+    const GAP = 120;
+
+    /* 이미지 세팅 + 초기 위치 */
+    slices.forEach((slice, i) => {
+      slice.style.backgroundImage = `url(${imgSrc})`;
+      slice.style.backgroundPosition =
+        `${(i / (slices.length - 1)) * 100}% 50%`;
+
+      gsap.set(slice, {
+        x: -(BASE + i * GAP)
+      });
+    });
+
+    if (word) {
+      gsap.set(word, { opacity: 0, y: 28 });
+    }
+
+    /* 슬라이스 이동 */
+    slices.forEach((slice) => {
+      gsap.to(slice, {
+        x: 0,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: leftPanel,
+          start: "top 85%",
+          end: "top 25%",
+          scrub: 1,
+          invalidateOnRefresh: true
+        }
+      });
+    });
+
+    /* 텍스트 */
+    if (word) {
+      gsap.to(word, {
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: leftPanel,
+          start: "top 60%",
+          end: "top 35%",
+          scrub: true
+        }
+      });
+    }
+  }
+
+  /* ==================================================
+     🔴 RIGHT PANEL
+  ================================================== */
+  const rightPanel = panels[1];
+  if (rightPanel) {
+
+    const wrap = rightPanel.querySelector(".slice-wrap");
+    const slices = rightPanel.querySelectorAll(".slice");
+    const word = rightPanel.querySelector(".atmosphere__word");
+    if (!wrap || !slices.length) return;
+
+    const imgSrc = wrap.dataset.img;
+    const BASE = window.innerWidth * 0.8;
+    const GAP = 120;
+
+    slices.forEach((slice, i) => {
+      slice.style.backgroundImage = `url(${imgSrc})`;
+      slice.style.backgroundPosition =
+        `${(i / (slices.length - 1)) * 100}% 50%`;
+
+      gsap.set(slice, {
+        x: BASE + i * GAP
+      });
+    });
+
+    if (word) {
+      gsap.set(word, { opacity: 0, y: 28 });
+    }
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: rightPanel,
+        start: "top 85%",
+        end: "top 25%",
+        scrub: 1.4,
+        invalidateOnRefresh: true
+      }
+    });
+
+    slices.forEach((slice, i) => {
+      const depth = slices.length - i;
+
+      tl.to(
+        slice,
+        {
+          x: 0,
+          duration: 1.4 + depth * 0.2,
+          ease: "power3.out"
+        },
+        0
+      );
+    });
+
+    if (word) {
+      tl.to(
+        word,
+        {
+          opacity: 1,
+          y: 0,
+          ease: "power2.out"
+        },
+        0.6
+      );
+    }
+  }
+
+  /* ==================================================
+     ✅ SECTION END — 전체 페이드 아웃 (좌우 공통)
+  ================================================== */
+  gsap.to(panels, {
     opacity: 0,
-    y: 40
-  });
-
-  // 메인 타임라인
-  gsap.timeline({
+    ease: "power1.out",
     scrollTrigger: {
-      trigger: ".atmosphere",
-      start: "top 85%",
-      end: "top 30%",
+      trigger: section,
+      start: "bottom bottom",
+      end: "bottom top",
       scrub: true
     }
-  })
-  // 이미지 톤 회복
-  .to(images, {
-    scale: 1,
-    filter: "brightness(1) contrast(1)",
-    ease: "none"
-  }, 0)
-
-  // 패널 오버레이 약화
-  .to(panels, {
-    "--overlay-opacity": 0.1,
-    ease: "none"
-  }, 0)
-
-  // 단어 등장
-  .to(words, {
-    opacity: 1,
-    y: 0,
-    stagger: 0.15,
-    ease: "power3.out"
-  }, 0.2);
+  });
 }

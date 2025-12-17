@@ -1,0 +1,168 @@
+/* ===============================
+   Epilogue – Dark → Light Ritual
+   =============================== */
+
+.epilogue {
+  position: relative;
+  padding: 220px 0;
+  overflow: hidden;
+
+  /* GSAP로 제어할 변수 */
+  --bg-color: #070707;
+  --text-color: rgba(255,255,255,0.85);
+  --before-opacity: 1;
+  --after-opacity: 0;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* 🔥 초기 어둠 + 블러 */
+.epilogue::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  backdrop-filter: blur(16px);
+  opacity: var(--before-opacity);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 🌫 빛의 그라데이션 */
+.epilogue::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 55%,
+    #ffffff 100%
+  );
+  opacity: var(--after-opacity);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 콘텐츠는 항상 위 */
+.epilogue > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* ===============================
+   Intro
+   =============================== */
+
+.epilogue__intro {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.epilogue__line {
+  font-family: var(--logo-font);
+  font-size: 2.4rem;
+  letter-spacing: 0.35em;
+  opacity: 0;
+  filter: blur(10px);
+}
+
+/* ===============================
+   House
+   =============================== */
+
+.epilogue__house {
+  max-width: 1200px;
+  margin: 200px auto 0;
+  padding: 0 32px;
+
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.epilogue__media img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  filter: brightness(0.75);
+  transition: filter 0.6s ease;
+}
+
+.epilogue__eyebrow {
+  font-family: var(--subEng-font);
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  opacity: 0.55;
+  margin-bottom: 24px;
+}
+
+.epilogue__title {
+  font-family: var(--logo-font);
+  font-size: 2.6rem;
+  letter-spacing: 0.35em;
+  line-height: 1.3;
+  margin-bottom: 32px;
+}
+
+.epilogue__desc {
+  font-family: var(--mainKor-font);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  opacity: 0.7;
+}
+
+/* ===============================
+   Light State (최종)
+   =============================== */
+
+.epilogue.is-light {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+}
+
+.epilogue.is-light .epilogue__media img {
+  filter: brightness(1);
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+
+@media (max-width: 900px) {
+  .epilogue {
+    padding: 160px 0;
+  }
+
+  .epilogue__intro {
+    height: 50vh;
+  }
+
+  .epilogue__line {
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+  }
+
+  .epilogue__house {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    margin-top: 120px;
+  }
+
+  .epilogue__media img {
+    height: 380px;
+  }
+
+  .epilogue__title {
+    font-size: 1.8rem;
+  }
+}

@@ -1,0 +1,17 @@
+/* ===============================
+   White Flash Transition
+   =============================== */
+
+.white-flash {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.epilogue__line {
+  transform-origin: center;
+  will-change: opacity, transform, filter;
+}

@@ -10,6 +10,31 @@
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+    <!-- LOADING -->
+<div class="loading">
+
+  <!-- split black -->
+  <div class="loading__split loading__split--left"></div>
+  <div class="loading__split loading__split--right"></div>
+
+  <!-- wipe layers -->
+  <div class="loading__wipe loading__wipe--black"></div>
+  <div class="loading__wipe loading__wipe--white"></div>
+
+  <!-- text -->
+  <div class="loading__content">
+    <p class="loading__text loading__text--roasterium">
+      Roasterium
+    </p>
+
+    <p class="loading__text loading__text--maison">
+      <span>Maison de Velours</span><br />
+      <small>Maid & Butler Café</small>
+    </p>
+  </div>
+
+</div>
+
     <header class="header">
       <div class="header__inner wrapper">
     <!-- Logo -->
@@ -58,29 +83,195 @@
         </div>
       </section>
 
-      <!-- consept -->
-      <section class="atmosphere">
-        <div class="atmosphere__panel atmosphere__panel--left">
-          <img src="assets/img/atmo1.jpg" alt="">
-          <span class="atmosphere__word">Quiet</span>
-        </div>
+<section class="atmosphere" data-nav="dark">
 
-        <div class="atmosphere__panel atmosphere__panel--right">
-          <img src="assets/img/atmo2.jpg" alt="">
-          <span class="atmosphere__word">Courtesy</span>
+  <div class="atmosphere__panel">
+    <div class="slice-wrap" data-img="assets/img/atmo1.jpg">
+      <div class="slice"></div>
+      <div class="slice"></div>
+      <div class="slice"></div>
+      <div class="slice"></div>
+      <div class="slice"></div>
+    </div>
+    <span class="atmosphere__word">Quiet</span>
+  </div>
+
+  <div class="atmosphere__panel">
+    <div class="slice-wrap" data-img="assets/img/atmo2.jpg">
+      <div class="slice"></div>
+      <div class="slice"></div>
+      <div class="slice"></div>
+      <div class="slice"></div>
+      <div class="slice"></div>
+    </div>
+    <span class="atmosphere__word">Courtesy</span>
+  </div>
+
+</section>
+
+
+<section class="house" data-nav="dark">
+
+  <!-- Rules -->
+  <div class="house__rules">
+    <ul class="rules__list">
+      <li>Speak softly</li>
+      <li>Never interrupt silence</li>
+      <li>Remember every guest</li>
+    </ul>
+  </div>
+
+  <!-- Ritual -->
+  <div class="house__ritual">
+    <ul class="ritual__list">
+      <li>
+        <img src="assets/img/ritual1.jpg" alt="">
+        <span class="ritual__role">Butler of Silence</span>
+      </li>
+      <li>
+        <img src="assets/img/ritual2.jpg" alt="">
+        <span class="ritual__role">Keeper of Aroma</span>
+      </li>
+      <li>
+        <img src="assets/img/ritual3.jpg" alt="">
+        <span class="ritual__role">Guardian of Order</span>
+      </li>
+    </ul>
+  </div>
+
+</section>
+
+<section class="menu-horizontal" data-nav="dark">
+
+  <header class="menu-h__header">
+    <p class="menu-h__eyebrow">Ritual Menu</p>
+    <h2 class="menu-h__title">Offerings of the House</h2>
+  </header>
+
+  <div class="menu-h__wrapper">
+    <ul class="menu-h__track">
+
+      <li class="menu-h__item">
+        <span class="menu-h__index">I</span>
+        <img src="assets/img/menu1.jpg" alt="">
+        <div class="menu-h__text">
+          <span class="menu-h__category">Signature</span>
+          <h3 class="menu-h__name">Velours Noir</h3>
+          <p class="menu-h__desc">Dark chocolate ritual served in silence</p>
         </div>
-      </section>
+      </li>
+
+      <li class="menu-h__item">
+        <span class="menu-h__index">II</span>
+        <img src="assets/img/menu2.jpg" alt="">
+        <div class="menu-h__text">
+          <span class="menu-h__category">Dessert</span>
+          <h3 class="menu-h__name">Earl Grey Crème</h3>
+          <p class="menu-h__desc">Soft tea aroma with restrained sweetness</p>
+        </div>
+      </li>
+
+      <li class="menu-h__item">
+        <span class="menu-h__index">III</span>
+        <img src="assets/img/menu3.jpg" alt="">
+        <div class="menu-h__text">
+          <span class="menu-h__category">Drink</span>
+          <h3 class="menu-h__name">Butler’s Espresso</h3>
+          <p class="menu-h__desc">Served warm, without unnecessary words</p>
+        </div>
+      </li>
+
+      <li class="menu-h__item">
+        <span class="menu-h__index">IV</span>
+        <img src="assets/img/menu4.jpg" alt="">
+        <div class="menu-h__text">
+          <span class="menu-h__category">Seasonal</span>
+          <h3 class="menu-h__name">Maison Seasonal</h3>
+          <p class="menu-h__desc">Changes quietly with the season</p>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+</section>
+<div class="white-flash"></div>
+<section class="epilogue">
+  <!-- 여운 텍스트 -->
+  <div class="epilogue__intro">
+    <p class="epilogue__line">Silence returns.</p>
+    <p class="epilogue__line">Only warmth remains.</p>
+  </div>
+
+  <!-- 공간 -->
+  <div class="epilogue__house">
+    <div class="epilogue__media">
+      <img src="assets/img/house-night.jpg" alt="">
+    </div>
+
+    <div class="epilogue__text">
+      <p class="epilogue__eyebrow">After Midnight</p>
+      <h3 class="epilogue__title">
+        The House<br>
+        Remains Awake
+      </h3>
+      <p class="epilogue__desc">
+        손님이 떠난 뒤에도<br>
+        의식은 조용히 계속됩니다.
+      </p>
+    </div>
+  </div>
+</section>
 
 
     </main>
 
-      <footer id="footer"></footer>
-
-    <div class="side_nav">
-        <span class="current">01</span>
-        <div class="line"><span></span></div>
-        <span class="total">06</span>
+    <footer id="footer" class="footer" >
+  <div class="footer__ledger">
+    <div class="footer__col">
+      <h4>House</h4>
+      <ul>
+        <li>About</li>
+        <li>Etiquette</li>
+        <li>Rules</li>
+      </ul>
     </div>
+
+    <div class="footer__col">
+      <h4>Ritual</h4>
+      <ul>
+        <li>Menu</li>
+        <li>Seasonal</li>
+        <li>Archive</li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Record</h4>
+      <ul>
+        <li>Contact</li>
+        <li>Instagram</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footer__closing">
+    The house closes its eyes.
+  </p>
+
+  <span class="footer__brand">
+    Maison de Velours
+  </span>
+</footer>
+
+
+    <!-- SIDE NAV -->
+    <div class="side_nav">
+      <span class="current">01</span>
+      <div class="line"><span></span></div>
+      <span class="total">00</span>
+    </div>
+
 
     <script type="module" src="assets/js/main.js"></script>
   </body>
