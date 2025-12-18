@@ -4,6 +4,7 @@ import atmo1 from "../img/atmo1.jpg";
 import atmo2 from "../img/atmo2.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
+console.log("ATOM LOADED");
 
 export function atom() {
 
