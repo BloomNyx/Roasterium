@@ -1,9 +1,19 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import atmo1 from "../img/atmo1.jpg";
+import atmo2 from "../img/atmo2.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function atom() {
+
+  /* ===============================
+     이미지 매핑 (추가만)
+  =============================== */
+  const IMAGE_MAP = {
+    atmo1,
+    atmo2
+  };
 
   const panels = document.querySelectorAll(".atmosphere__panel");
   if (!panels.length) return;
@@ -21,7 +31,9 @@ export function atom() {
     const word = leftPanel.querySelector(".atmosphere__word");
     if (!wrap || !slices.length) return;
 
-    const imgSrc = wrap.dataset.img;
+    const imgKey = wrap.dataset.img;                 // 기존
+    const imgSrc = IMAGE_MAP[imgKey] || imgKey;      // 🔥 추가
+
     const BASE = window.innerWidth * 0.8;
     const GAP = 120;
 
@@ -82,7 +94,9 @@ export function atom() {
     const word = rightPanel.querySelector(".atmosphere__word");
     if (!wrap || !slices.length) return;
 
-    const imgSrc = wrap.dataset.img;
+    const imgKey = wrap.dataset.img;                 // 기존
+    const imgSrc = IMAGE_MAP[imgKey] || imgKey;      // 🔥 추가
+
     const BASE = window.innerWidth * 0.8;
     const GAP = 120;
 
@@ -138,7 +152,7 @@ export function atom() {
   }
 
   /* ==================================================
-     ✅ SECTION END — 전체 페이드 아웃 (좌우 공통)
+     ✅ SECTION END — 전체 페이드 아웃
   ================================================== */
   gsap.to(panels, {
     opacity: 0,
